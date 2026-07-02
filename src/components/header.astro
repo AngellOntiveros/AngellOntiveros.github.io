@@ -1,7 +1,6 @@
 ---
 import menus from "../collections/menu.json";
 import Logo from "../components/logo.astro";
-import { withBase } from "../utils/paths";
 ---
 
 <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
@@ -64,7 +63,7 @@ import { withBase } from "../utils/paths";
           menus.map((menu) => {
             return (
               <a
-                href={withBase(menu.url)}
+                href={menu.url}
                 class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
               >
                 {menu.name}

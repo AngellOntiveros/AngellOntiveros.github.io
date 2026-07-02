@@ -4,7 +4,6 @@ import stack from "../collections/stack.json";
 import PageHeading from "../components/page-heading.astro";
 import TechStack from "../components/tech-stack.astro";
 import Layout from "../layouts/main.astro";
-import { withBase } from "../utils/paths";
 ---
 
 <Layout
@@ -18,7 +17,7 @@ import { withBase } from "../utils/paths";
     />
 
     <img
-      src={withBase("/assets/images/about.png")}
+      src="/assets/images/about.png"
       alt="Foto placeholder de Angel Ontiveros"
       class="relative z-30 w-full my-10 rounded-xl"
     />

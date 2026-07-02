@@ -16,7 +16,7 @@ pnpm preview
 El sitio está configurado para GitHub Pages:
 
 - `site`: `https://angellontiveros.github.io`
-- `base`: `/Portafolio`
+- `base`: raíz del sitio (no se usa `base` en `astro.config.mjs`)
 - Workflow: `.github/workflows/deploy.yml`
 
-Si el repositorio final cambia de nombre, actualiza `base` en `astro.config.mjs`.
+Si el repositorio final cambia de nombre y se despliega como sitio de proyecto, agrega el `base` correcto en `astro.config.mjs`.

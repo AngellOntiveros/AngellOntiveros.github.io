@@ -3,14 +3,13 @@ import "../assets/css/main.css";
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import SquareLines from "../components/square-lines.astro";
-import { withBase } from "../utils/paths";
 const {
 	title = "Angel Ontiveros",
 	description = "Portafolio de proyectos de Angel Ontiveros: Full-Stack, DevOps, IA industrial, automatización e infraestructura.",
 } = Astro.props;
 const fullTitle =
 	title === "Angel Ontiveros" ? title : `${title} | Angel Ontiveros`;
-const ogImage = withBase("/assets/images/cover.png");
+const ogImage = "/assets/images/cover.png";
 ---
 
 <!doctype html>
@@ -43,7 +42,7 @@ const ogImage = withBase("/assets/images/cover.png");
         border-radius: 20px;
       }
     </style>
-    <link rel="icon" type="image/jpeg" href={withBase("/assets/images/favicon.jpeg")} />
+    <link rel="icon" type="image/jpeg" href="/assets/images/favicon.jpeg" />
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
   <body class="antialiased bg-white dark:bg-neutral-950">

@@ -1,7 +1,6 @@
 ---
-import { withBase } from "../utils/paths";
 const { link, text } = Astro.props;
-const href = withBase(link);
+const href = link;
 const isExternal = /^https?:/.test(link);
 ---
 

@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^git grep -n 'Portafolio' -- src public astro\\.config\\.mjs ; true; echo '---'; git grep -n -e 'BASE_URL' -e 'import\\.meta\\.env\\.BASE_URL' -e 'withBase\\(' -e 'baseUrl' -e 'base_url' -- src public ; true$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
