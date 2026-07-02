@@ -1,0 +1,57 @@
+---
+import "../assets/css/main.css";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import SquareLines from "../components/square-lines.astro";
+import { withBase } from "../utils/paths";
+const {
+	title = "Angel Ontiveros",
+	description = "Portafolio de proyectos de Angel Ontiveros: Full-Stack, DevOps, IA industrial, automatización e infraestructura.",
+} = Astro.props;
+const fullTitle =
+	title === "Angel Ontiveros" ? title : `${title} | Angel Ontiveros`;
+const ogImage = withBase("/assets/images/cover.png");
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <script is:inline>
+      if (typeof Storage !== 'undefined') {
+        if (
+          localStorage.getItem('dark_mode') &&
+          localStorage.getItem('dark_mode') == 'true'
+        ) {
+          document.documentElement.classList.add('dark')
+        }
+      }
+    </script>
+
+    <style>
+      .prose img {
+        border-radius: 20px;
+      }
+    </style>
+    <link rel="icon" type="image/jpeg" href={withBase("/assets/images/favicon.jpeg")} />
+    <Fragment set:html={import.meta.env.HEADER_INJECT} />
+  </head>
+  <body class="antialiased bg-white dark:bg-neutral-950">
+    <SquareLines />
+    <Header />
+    <slot />
+    <Footer />
+    <script src="../assets/js/main.js"></script>
+    <Fragment set:html={import.meta.env.FOOTER_INJECT} />
+  </body>
+</html>

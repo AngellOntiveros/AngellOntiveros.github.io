@@ -1,0 +1,83 @@
+---
+import infrastructure from "../collections/infrastructure.json";
+import stack from "../collections/stack.json";
+import PageHeading from "../components/page-heading.astro";
+import TechStack from "../components/tech-stack.astro";
+import Layout from "../layouts/main.astro";
+import { withBase } from "../utils/paths";
+---
+
+<Layout
+  title="About"
+  description="Bio, stack técnico e infraestructura de Angel Ontiveros."
+>
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="About"
+      description="Ingeniero Mecatrónico enfocado en automatización industrial, desarrollo de software e IIoT."
+    />
+
+    <img
+      src={withBase("/assets/images/about.png")}
+      alt="Foto placeholder de Angel Ontiveros"
+      class="relative z-30 w-full my-10 rounded-xl"
+    />
+
+    <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200">Bio corta</h2>
+    <p
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
+    >
+      Ingeniero Mecatrónico enfocado en automatización industrial, desarrollo de
+      software e IIoT. Construyo sistemas de visión artificial, integro
+      protocolos industriales como OPC-UA y MQTT, y desarrollo plataformas web de
+      monitoreo en planta. Busco entornos donde la tecnología resuelva problemas
+      operativos concretos.
+    </p>
+
+    <TechStack
+      title="Stack técnico"
+      description="Tecnologías que uso para construir, desplegar y mantener soluciones industriales y web."
+      sections={stack}
+    />
+
+    <TechStack
+      title="Infraestructura & Redes"
+      description="Bloque separado para redes, acceso remoto, routing, mensajería industrial y datos de series de tiempo."
+      sections={infrastructure}
+    />
+
+    <h2 class="mt-10 mb-2 text-2xl font-bold dark:text-neutral-200">Let's Connect</h2>
+    <div class="mt-4 grid gap-3 text-sm text-slate-800 dark:text-slate-200 sm:grid-cols-2">
+      <a
+        href="mailto:angello3711@outlook.com"
+        class="rounded-xl border border-neutral-300 bg-white px-4 py-3 text-center font-medium text-indigo-600 transition hover:bg-indigo-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-indigo-400 dark:hover:bg-neutral-800"
+      >
+        Email
+      </a>
+      <a
+        href="https://wa.me/573224148208"
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-xl border border-neutral-300 bg-white px-4 py-3 text-center font-medium text-emerald-600 transition hover:bg-emerald-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-emerald-400 dark:hover:bg-neutral-800"
+      >
+        WhatsApp
+      </a>
+      <a
+        href="https://www.linkedin.com/in/angel-ontiveros-0b3679336/"
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-xl border border-neutral-300 bg-white px-4 py-3 text-center font-medium text-blue-600 transition hover:bg-blue-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-blue-400 dark:hover:bg-neutral-800"
+      >
+        LinkedIn
+      </a>
+      <a
+        href="https://github.com/AngellOntiveros"
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-xl border border-neutral-300 bg-white px-4 py-3 text-center font-medium text-slate-800 transition hover:bg-slate-50 dark:border-neutral-700 dark:bg-neutral-900 dark:text-slate-200 dark:hover:bg-neutral-800"
+      >
+        GitHub
+      </a>
+    </div>
+  </section>
+</Layout>

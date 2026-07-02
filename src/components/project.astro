@@ -1,0 +1,103 @@
+---
+import { withBase } from "../utils/paths";
+
+type ProjectStatus = "live" | "in-progress" | "planned";
+
+interface Props {
+	name: string;
+	description: string;
+	url?: string;
+	image: string;
+	status?: string;
+	tech?: string[];
+}
+
+const { name, description, url = "", image, status = "planned", tech = [] } =
+	Astro.props as Props;
+
+const statusMap: Record<ProjectStatus, { label: string; class: string }> = {
+	live: {
+		label: "En producción",
+		class:
+			"border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300",
+	},
+	"in-progress": {
+		label: "En curso",
+		class:
+			"border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-300",
+	},
+	planned: {
+		label: "Planificado",
+		class:
+			"border-neutral-300 bg-neutral-50 text-neutral-600 border-dashed dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300",
+	},
+};
+
+const normalizedStatus = status in statusMap ? (status as ProjectStatus) : "planned";
+const state = statusMap[normalizedStatus];
+const imageSrc = withBase(image);
+const href = withBase(url);
+const isExternal = /^https?:/.test(url);
+const hasUrl = Boolean(url);
+---
+
+<article
+  class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-full rounded-2xl"
+>
+  <span
+    class="absolute inset-0 z-20 block w-full h-full duration-300 ease-out bg-transparent border border-transparent border-dashed group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-neutral-300 dark:group-hover:border-neutral-600 group-hover:border-dashed rounded-2xl group-hover:bg-white dark:group-hover:bg-neutral-950"
+  ></span>
+  <span
+    class="absolute inset-0 z-10 block w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1"
+  ></span>
+  <div
+    class="relative z-30 flex h-full flex-col duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
+  >
+    <img
+      src={imageSrc}
+      alt={`Imagen del proyecto ${name}`}
+      class="w-full h-auto rounded-lg aspect-[16/9] object-cover"
+    />
+    <div class="flex flex-col flex-1 w-full px-1 mt-5 mb-1 sm:mt-3">
+      <div class="mb-3 flex flex-wrap items-start gap-2">
+        <span
+          class={`inline-flex items-center rounded-full border px-2.5 py-1 text-[11px] font-semibold ${state.class}`}
+        >
+          {state.label}
+        </span>
+      </div>
+      <h2
+        class="mb-2 text-base font-semibold leading-6 text-neutral-900 dark:text-neutral-100"
+      >
+        {
+          hasUrl ? (
+            <a
+              href={href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noreferrer" : undefined}
+              class="hover:underline"
+            >
+              {name}
+            </a>
+          ) : (
+            name
+          )
+        }
+      </h2>
+      <p class="text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+        {description}
+      </p>
+      {
+        tech.length > 0 && (
+          <div class="mt-4 flex flex-wrap gap-2">
+            {tech.map((item) => (
+              <span class="rounded-full border border-neutral-300 px-2 py-0.5 text-[11px] font-medium text-neutral-600 dark:border-neutral-700 dark:text-neutral-300">
+                {item}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</article>

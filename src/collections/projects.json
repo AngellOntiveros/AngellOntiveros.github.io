@@ -1,0 +1,34 @@
+[
+	{
+		"name": "Sistema de Control Palnorte - Industry 4.0",
+		"description": "Dashboard de monitoreo de producción en tiempo real para planta extractora de aceite de palma. Arquitectura SOA, edge computing con Raspberry Pi, auth JWT+RBAC.",
+		"image": "/assets/images/projects/palnorte-dashboard.png",
+		"url": "",
+		"status": "live",
+		"tech": ["FastAPI", "MySQL", "Docker", "Nginx", "WireGuard", "Redis", "Bootstrap 5", "Raspberry Pi"]
+	},
+	{
+		"name": "Kyra - Agente de Voz IA por WhatsApp",
+		"description": "Asistente conversacional multi-agente conectado a BD productiva. Responde consultas de planta en lenguaje natural con voz (TTS Nova).",
+		"image": "/assets/images/projects/kyra-whatsapp.png",
+		"url": "",
+		"status": "live",
+		"tech": ["OpenAI GPT-4", "TTS Nova", "n8n", "Evolution API", "Redis", "MySQL", "WhatsApp"]
+	},
+	{
+		"name": "RNA Conteo Vagonetas - YOLOv8 + Tracking",
+		"description": "Módulo de visión artificial para validación automática de conteo manual (proyecto de tesis). Línea virtual de cruce, detección direccional ENTRY/EXIT, stream RTSP. Elevó la precisión del conteo del 63% al 85% frente al estándar global.",
+		"image": "/assets/images/projects/yolo-conteo.png",
+		"url": "",
+		"status": "live",
+		"tech": ["YOLOv8", "BoT-SORT", "RTSP", "FastAPI", "SSE", "Python", "MySQL"]
+	},
+	{
+		"name": "Finka",
+		"description": "Plataforma SaaS para gestión integral de cultivos de palma de aceite, desarrollada para CYPAG S.A.S (Norte de Santander). Digitaliza trazabilidad de fruto FFB, monitoreo agronómico vía CyberTracker, programación de tareas agrícolas y reportes de sostenibilidad RSPO, reemplazando flujos manuales en papel/hojas de cálculo.",
+		"image": "/assets/images/projects/palmasmart-backend.png",
+		"url": "",
+		"status": "in-progress",
+		"tech": ["FastAPI", "Python", "MySQL"]
+	}
+]

@@ -1,0 +1,26 @@
+[
+	{
+		"category": "Certificación",
+		"items": ["Técnico en Redes - CCNA, Cisco NetAcad (2026)"]
+	},
+	{
+		"category": "VPN & Acceso remoto",
+		"items": ["WireGuard", "OpenVPN", "Tailscale"]
+	},
+	{
+		"category": "Firewall / Routing",
+		"items": ["pfSense"]
+	},
+	{
+		"category": "Protocolos industriales",
+		"items": ["MQTT", "OPC-UA", "TCP/IP"]
+	},
+	{
+		"category": "Broker de mensajería",
+		"items": ["EMQX"]
+	},
+	{
+		"category": "Base de datos de series de tiempo",
+		"items": ["InfluxDB"]
+	}
+]

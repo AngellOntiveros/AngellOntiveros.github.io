@@ -1,0 +1,26 @@
+[
+	{
+		"category": "Programación",
+		"items": ["Python", "C++", "JavaScript", "SQL (MySQL/PostgreSQL)", "Bash"]
+	},
+	{
+		"category": "IA & Machine Learning",
+ 		"items": ["PyTorch", "LangChain", "YOLOv8", "n8n"]
+	},
+	{
+		"category": "Web & Backend",
+		"items": ["FastAPI", "Django", "MySQL", "PostgreSQL"]
+	},
+	{
+		"category": "Sistemas Embebidos",
+		"items": ["Raspberry Pi", "ESP32", "Arduino"]
+	},
+	{
+		"category": "Herramientas",
+		"items": ["Git", "GitHub", "Linux", "Autodesk Inventor"]
+	},
+	{
+		"category": "Seguridad",
+		"items": ["Kali Linux", "JWT/RBAC", "Scapy", "Pentesting"]
+	}
+]
