@@ -25,7 +25,7 @@
 	},
 	{
 		"name": "Finka",
-		"description": "Plataforma SaaS para gestión integral de cultivos de palma de aceite, desarrollada para CYPAG S.A.S (Norte de Santander). Digitaliza trazabilidad de fruto FFB, monitoreo agronómico vía CyberTracker, programación de tareas agrícolas y reportes de sostenibilidad RSPO, reemplazando flujos manuales en papel/hojas de cálculo.",
+		"description": "Plataforma SaaS para gestión integral de cultivos de palma de aceite, desarrollada para fincas palmicultoras (Norte de Santander). Digitaliza trazabilidad de fruto FFB, monitoreo agronómico vía CyberTracker, programación de tareas agrícolas y reportes de sostenibilidad RSPO, reemplazando flujos manuales en papel/hojas de cálculo.",
 		"image": "/assets/images/projects/palmasmart-backend.png",
 		"url": "",
 		"status": "in-progress",
