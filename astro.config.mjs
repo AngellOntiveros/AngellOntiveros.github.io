@@ -7,6 +7,6 @@ const isProduction = process.env.NODE_ENV === "production";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://angellontiveros.github.io",
-	base: "/",
+	base: isProduction ? "/Portafolio" : "/",
 	integrations: [tailwind()],
 });
